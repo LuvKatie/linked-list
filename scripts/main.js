@@ -49,8 +49,20 @@ class Linkedlist {
         }
     }
 
-    size() {
+    size(node) {
+        let counter = 0;
 
+        node = this.head;
+
+        while(node) {
+            counter++
+            node = node.next;
+
+            if(!node) {
+                return "Total of " + counter + " Nodes";
+            }
+            
+        }
     }
 }
 
