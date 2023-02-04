@@ -47,7 +47,7 @@ class Linkedlist {
 
     size(counter = 0, node = this.head) {
         if(!node) {
-            return "Total of " + counter + " Nodes";
+            return counter;
         }
 
         return this.size(counter + 1, node = node.next);
@@ -59,6 +59,11 @@ class Linkedlist {
         }
 
         return this.at(index - 1, node = node.next);
+    }
+
+    pop() {
+        let beforeLast = this.at(this.size() - 1);
+        beforeLast.next = null;
     }
 }
 
