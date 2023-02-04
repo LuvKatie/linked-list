@@ -28,12 +28,12 @@ class Linkedlist {
     }
 
     // Return first node from head
-    firstNode() {
-        if(!this.head) {
+    firstNode(node = this.head) {
+        if(!node) {
             return null;
         }
 
-        return this.head;
+        return node;
     }
 
     // Return last node
@@ -45,20 +45,12 @@ class Linkedlist {
         return this.lastNode(node = node.next);
     }
 
-    size(node) {
-        let counter = 0;
-
-        node = this.head;
-
-        while(node) {
-            counter++
-            node = node.next;
-
-            if(!node) {
-                return "Total of " + counter + " Nodes";
-            }
-            
+    size(counter = 0, node = this.head) {
+        if(!node) {
+            return "Total of " + counter + " Nodes";
         }
+
+        return this.size(counter + 1, node = node.next);
     }
 
     at(index, node = this.head) {
