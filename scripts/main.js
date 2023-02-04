@@ -65,6 +65,16 @@ class Linkedlist {
         let beforeLast = this.at(this.size() - 1);
         beforeLast.next = null;
     }
+
+    contains(value, node = this.head) {
+        if(node.value == value) {
+            return true;
+        } else if (node.next) {
+            return this.contains(value, node = node.next);
+        }
+
+        return false;
+    }
 }
 
 class Nodes {
