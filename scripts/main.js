@@ -5,7 +5,7 @@ class Linkedlist {
 
     append(value, node = this.lastNode()) {
         if(!this.head) {
-            this.head = new Nodes();
+            this.head = new Nodes(value);
             return;
         }
 
