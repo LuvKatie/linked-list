@@ -75,6 +75,16 @@ class Linkedlist {
 
         return false;
     }
+
+    find(value, node = this.head) {
+        if(node.value == value) {
+            return node;
+        } else if (node.next) {
+            return this.find(value, node = node.next);
+        }
+
+        return false;
+    }
 }
 
 class Nodes {
