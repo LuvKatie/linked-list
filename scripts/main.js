@@ -85,6 +85,23 @@ class Linkedlist {
 
         return false;
     }
+
+    toString(node = this.head) {
+        if (!this.head) {
+            return null;
+        }
+        
+        let string = "";
+
+        if (node) {
+            console.log(string += node.value);
+        } else if (!node) {
+            console.log("null");
+            return;
+        }
+
+        return this.toString(node = node.next);
+    }
 }
 
 class Nodes {
