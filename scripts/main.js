@@ -65,22 +65,12 @@ class Linkedlist {
         }
     }
 
-    at(index) {
-        let counter = index;
-        let node = this.head;
-
-        while(counter > 0) {
-            if(counter == 1) {
-                return node;
-            }
-            
-            if(node) {
-                node = node.next
-            }
-
-
-            counter--;
+    at(index, node = this.head) {
+        if (index == 1) {
+            return node;
         }
+
+        return this.at(index - 1, node = node.next);
     }
 }
 
