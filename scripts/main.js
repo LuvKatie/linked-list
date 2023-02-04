@@ -3,11 +3,13 @@ class Linkedlist {
         this.head = head;
     }
 
-    append(value, node = this.lastNode()) {
+    append(value, node) {
         if(!this.head) {
             this.head = new Nodes(value);
             return;
-        }
+        } 
+
+        node = this.lastNode()
 
         if (!node.next) {
             node.next = new Nodes(value);
@@ -35,18 +37,12 @@ class Linkedlist {
     }
 
     // Return last node
-    lastNode(node) {
-        if (!this.head) {
-            return null;
+    lastNode(node = this.head) {
+        if (!node.next) {
+            return node;
         }
 
-        node = this.head;
-        while(node) {
-            if(!node.next) {
-                return node;
-            }
-            node = node.next;
-        }
+        return this.lastNode(node = node.next);
     }
 
     size(node) {
