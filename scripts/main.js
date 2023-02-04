@@ -64,6 +64,24 @@ class Linkedlist {
             
         }
     }
+
+    at(index) {
+        let counter = index;
+        let node = this.head;
+
+        while(counter > 0) {
+            if(counter == 1) {
+                return node;
+            }
+            
+            if(node) {
+                node = node.next
+            }
+
+
+            counter--;
+        }
+    }
 }
 
 class Nodes {
